@@ -6,13 +6,17 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "lint": "eslint --ignore-path .gitignore .",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\""
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\"",
+    "format": "yarn prettier -- --write",
+    "check-format": "yarn prettier -- --list-different",
+    "validate": "yarn lint && yarn build"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
     "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
     "prettier": "^2.2.1"
   }
 }
